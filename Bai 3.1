@@ -1,0 +1,21 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+long GT(int n)
+{
+	long ketqua = 1;
+	for (int i = 1; i <= n; i++)
+	{
+		ketqua *= i;
+	}
+	return ketqua;
+}
+int main()
+{
+	int n;
+	cout << "Nhap n: "; cin >> n;
+	double S = (double)(GT(n) + 1) / GT(n + 1);
+	cout << "S= " << S;
+	return 0;
+}
