@@ -1,0 +1,60 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+void NHAP(float &x)
+{
+	cout << "Nhap gia tri: ";
+	cin >> x;
+}
+float timMAX(float a, float b, float c)
+{
+	float max = a;
+	if (b > max) max = b;
+	if (c > max) max = c;
+	return max;
+}
+float timMIN(float a, float b, float c)
+{
+	float min = a;
+	if (b < min) min = b;
+	if (c < min) min = c;
+	return min;
+}
+
+float timMAX(float a, float b, float c, float d, float e)
+{
+	float max = a;
+	if (b > max) max = b;
+	if (c > max) max = c;
+	if (d > max) max = d;
+	if (e > max) max = e;
+	return max;
+}
+float timMIN(float a, float b, float c, float d, float e)
+{
+	float min = a;
+	if (b < min) min = b;
+	if (c < min) min = c;
+	if (d < min) min = d;
+	if (e < min) min = e;
+	return min;
+}
+
+int main()
+{
+	float a, b, c, d, e;
+	NHAP(a);
+	NHAP(b);
+	NHAP(c);
+	cout << "Gia tri lon nhat la: " << timMAX(a, b, c) << endl;
+	cout << "Gia tri nho nhat la: " << timMIN(a, b, c) << endl;
+
+	NHAP(d);
+	NHAP(e);
+
+	cout << "Gia tri lon nhat la: " << timMAX(a, b, c, d, e) << endl;
+	cout << "Gia tri nho nhat la: " << timMIN(a, b, c, d, e) << endl;
+
+	return 0;
+}
