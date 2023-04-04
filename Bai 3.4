@@ -1,0 +1,77 @@
+#include<iostream>
+using namespace std;
+
+int giaiPtBac2(float a, float b, float c, float& x1, float& x2)
+{
+	if (a == 0)
+	{
+		if (b == 0)
+		{
+			if (c == 0)
+			{
+				return 1; // phuong trinh vo so nghiem
+			}
+			else
+			{
+				return 2; // phuong trinh vo nghiem
+			}
+		}
+		else
+		{
+			x1 = x2 = -c / b;
+			return 3; // phuong trinh co nghiem duy nhat 
+		}
+	}
+	else
+	{
+		float delta = b * b - 4 * a * c;
+		if (delta < 0)
+		{
+			return 4; // phuong trinh vo nghiem
+		}
+		else if (delta == 0)
+		{
+			x1 = x2 = -b / (2 * a);
+			return 5;// phuong trinh co nghiem kep
+		}
+		else
+		{
+			x1 = (-b + sqrt(delta)) / (2 * a);
+			x2 = (-b - sqrt(delta)) / (2 * a);
+			return 6;// phuong trinh co 2 nghiem phan biet
+		}
+	}
+}
+
+int main()
+{
+	float a, b, c, x1, x2;
+	cout << "Nhap lan luot cac an a,b,c: " << endl;
+	cin >> a >> b >> c;
+	float K = giaiPtBac2(a, b, c, x1, x2);
+	if (K == 1)
+	{
+		cout << "Phuong trinh vo so nghiem";
+	}
+	else if (K == 2 || K == 4)
+	{
+		cout << "Phuong trinh vo nghiem";
+	}
+	else if (K == 3)
+	{
+		cout << "Phuong trinh co nghiem duy nhat x = " << x1;
+	}
+	else if (K == 5)
+	{
+		cout << "Phuong trinh co nghiem kep x1 = x2 = " << x1;
+	}
+	else if (K == 6)
+	{
+		cout << "Phuong trinh co 2 nghiem phan biet x1 = " << x1 << " ,x2 = " << x2;
+	}
+	else
+	{
+		cout << "Vui long nhap lai!";
+	}
+	return 0;
+}
