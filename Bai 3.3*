@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+
+float timMAX(float a, float b, float c)
+{
+	float max = a;
+	if (b > max) max = b;
+	if (c > max) max = c;
+	return max;
+}
+
+float timMIN(float a, float b, float c)
+{
+	float min = a;
+	if (b < min) min = b;
+	if (c < min) min = c;
+	return min;
+}
+
+int main()
+{
+	float a, b, c;
+	cout << "Nhap lan luot a,b,c" << endl; cin >> a >> b >> c;
+	float max1 = timMAX(a, b, c);
+	float min1 = timMIN(a, b, c);
+	cout << "Gia tri lon nhat trong 3 so a,b,c: " << max1 << endl;
+	cout << "Gia tri nho nhat trong 3 so a,b,c: " << min1 << endl;
+	float d, e;
+	cout << "Nhap d,e: " << endl; cin >> d >> e;
+	float max2 = timMAX(max1, d, e);
+	float min2 = timMIN(min1, d, e);
+	cout << "Gia tri lon nhat trong 5 so: " << max2 << endl;
+	cout << "Gia tri nho nhat trong 5 so: " << min2 << endl;
+	return 0;
+}
